@@ -1,5 +1,4 @@
-import random
-import string
+import random, string, datetime
 import tkinter as tk
 
 # Generate a password based on inputs
@@ -37,6 +36,7 @@ def initialise_ui():
 
 	window = tk.Tk()
 	window.title('Password Generator')
+	window.iconbitmap('favicon.ico')
 
 	# Width for all entries
 	entry_width = 14
@@ -73,9 +73,6 @@ def initialise_ui():
 		password_context_menu.tk_popup(event.x_root, event.y_root)
 
 	password_entry.bind('<Button-3>', show_password_context_menu)
-
-	copyright_label = tk.Label(window, text='© 2023 | Emanuel Kulich')
-	copyright_label.grid(column=0, row=5, columnspan=2, padx=10, pady=10)
 
 	window.resizable(False,False)
 	window.mainloop()
